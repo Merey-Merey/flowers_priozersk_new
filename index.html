@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="header" id="myHeader">
+    <a href="#default" class="logo">Flowers_Priozersk</a>
+    <div class="header-right" id="headerLinks">
+      <a class="active" href="#productGrid"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journals" viewBox="0 0 16 16" >
+  <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2"/>
+  <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0"/>
+</svg>Каталог</a>
+      <a href="#about">  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
+            </svg>Свяжитесь с нами</a>
+    </div>
+    <span class="icon" onclick="toggleMenu()" id="burgerIcon">&#9776;</span>
+  </div>
+ <section>
+  <div class="main">
+    <div class="bg">
+      <img src="./bg.jpg" alt="Flowers">
+      <h3 class="text">Flowers_Priozersk</h3>
+      <div class="button">
+            <a href="#productGrid"><button class="bt" style="cursor: pointer;">Каталог</button></a>
+            <a href="#about"><button class="bt-two" style="cursor: pointer;">Свяжитесь с нами </button></a> 
+        </div>
+    </div>
+  </div>
+</section>
+
+<div class="mobile-header">
+  <button id="filterToggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#FD517C" viewBox="0 0 16 16">
+      <path d="M6 10.117V16l4-2v-3.883l5.447-6.8A1 1 0 0 0 14.618 2H1.382a1 1 0 0 0-.829 1.517z"/>
+    </svg>
+    Filter
+  </button>
+</div>
+
+<div class="header-s">
+  <div class="search-wrapper">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FD517C" class="bi bi-search-heart-fill" viewBox="0 0 16 16">
+      <path d="M6.5 13a6.47 6.47 0 0 0 3.845-1.258h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1A6.47 6.47 0 0 0 13 6.5 6.5 6.5 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13m0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+    </svg>
+    <input class="search-input" id="searchBox" placeholder="Ищу букета...">
+  </div>
+</div>
+
+
+  <div class="container">
+
+    <!-- Фильтры -->
+    <div class="filters" id="filtersPanel">
+      <div class="filter-group">
+        <h4>Цвет</h4>
+        <div class="filter-grid">
+          <label><input type="checkbox" value="White" class="color-filter">Белый</label>
+          <label><input type="checkbox" value="Red" class="color-filter">Красный</label>
+          <label><input type="checkbox" value="Pink" class="color-filter">Розовый</label>
+          <label><input type="checkbox" value="Peach" class="color-filter">Бежевый</label>
+          <label><input type="checkbox" value="Multicolored" class="color-filter">Смешенные</label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Типы</h4>
+        <label><input type="checkbox" value="Bouquet" class="type-filter">Букет</label><br>
+        <label><input type="checkbox" value="Bag" class="type-filter">Сумка</label><br>
+        <label><input type="checkbox" value="Box" class="type-filter">Коробка</label><br>
+      </div>
+
+      <div class="filter-group">
+        <h4>Размер</h4>
+        <label><input type="checkbox" value="Small" class="size-filter">Маленький</label><br>
+        <label><input type="checkbox" value="Medium" class="size-filter">Средний</label><br>
+        <label><input type="checkbox" value="Large" class="size-filter">Большой</label>
+      </div>
+
+      <button class="reset-btn" onclick="resetAll()">✕ Удалить</button>
+    </div>
+
+    <!-- Товары -->
+    <div class="products" id="productGrid">
+      <!-- Пример карточки -->
+      <div class="card" data-color="Red" data-type="Bouquet"ч data-size="Small" data-name="Мыльный букет 11шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.13.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 11шт</div>
+          <div class="card-price">$70.00 USD</div>
+        </div>
+      </div>
+
+
+      <div class="card" data-color="Peach" data-type="Bouquet" data-size="Medium" data-name="Мыльный букет 11шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.16.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 11шт</div>
+          <div class="card-price">$150.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Pink" data-type="Bouquet" data-size="Large" data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.17.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$50.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Multicolored" data-type="Bouquet" data-size="Small" data-name="Мыльный букет 11шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.19.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 11шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Multicolored" data-type="Bag" data-size="Small" data-name="Мыльный букет 11шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.21.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный розы в сумке 11шт</div>
+          <div class="card-price">$70.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="White" data-type="Bouquet" data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.25.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Pink" data-type="Bouquet" data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.27.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Multicolored" data-type="Bag" data-size="Medium"  data-name="Мыльный букет 21шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.29.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный розы в сумке 21шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="White" data-type="Bouquet" data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.23.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Red" data-type="Bouquet" data-size="Small,Medium"  data-name="Мыльный букет 15шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.33.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 15шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Red" data-type="Bouquet" data-size="Small,Medium" data-name="Мыльный букет 15шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.35.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 15шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Pink" data-type="Bouquet" data-size="Small,Medium" data-name="Мыльный букет 15шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.37.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 15шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Red" data-type="Bouquet"  data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.40.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="Pink" data-type="Bouquet" data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.42.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="White" data-type="Bouquet"  data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.45.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+
+      <div class="card" data-color="red" data-type="Bouquet"  data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.47.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+      <div class="card" data-color="Peach" data-type="Bouquet"  data-size="Medium"  data-name="Мыльный букет 25шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.48.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 25шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+      <div class="card" data-color="Pink" data-type="Bouquet"  data-size="Small" data-name="Мыльный букет 11шт">
+        <img src="images_of_flowers/photo_2025-07-31 17.08.49.jpeg">
+        <div class="card-body">
+          <div class="card-title">Мыльный букет 11шт</div>
+          <div class="card-price">$90.00 USD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="contact" id="about">
+  <div class="contact_page">
+    <div class="bg2">
+      <img src="./bh2.jpg" alt="Фон">
+      <div class="page">
+        <h3>Flowers_Priozersk</h3>
+        <p>Свяжитесь с нами</p>
+        <div class="icons">
+          <div class="icon-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
+              <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+            </svg>
+            <span>г. Приозерск, Дружба Народов 4/1 </span>
+          </div>
+          <div class="icon-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0"/>
+            </svg>
+            <span>+7 (705) 451 5807</span>
+          </div>
+        </div>
+        <div class="social">
+          <div class="social-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="none" stroke="black" stroke-width="5"/>
+  <path d="M48 18L41 47c-.4 1.7-1.4 2.1-2.8 1.3l-7.8-5.8-3.8 3.7c-.4.4-.8.8-1.7.8l.6-8.2L44 21c.7-.6-.1-.9-1-.3L21 34.6l-8-2.5c-1.7-.5-1.7-1.7.4-2.6l32-12.4c1.5-.6 2.8.3 2.6 1.9z" fill="none" stroke="black" stroke-width="3"/>
+</svg>
+          </div>
+          <div class="social-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg>
+          </div>
+           <div class="social-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
