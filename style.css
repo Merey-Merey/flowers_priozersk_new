@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+      box-sizing: border-box;
 }
 body{
   overflow-x: hidden;
@@ -10,6 +11,9 @@ body{
   height: 500px;
   filter: blur(3px);
   object-fit: cover;
+}
+.only{
+  margin-bottom: -2px;
 }
 .bg .text {
   position: absolute;
@@ -32,9 +36,7 @@ body{
     padding: 20px 10px;
     position: relative;
   } 
-  svg{
-    padding-right: 7px;
-  }
+ 
   .header a {
     color: black;
     float: left;
@@ -56,7 +58,6 @@ body{
   .header-right {
     font-family: "Noto Sans", sans-serif;
     float: right;
-    margin: 10px;
   }
   .header .icon {
     display: none;
@@ -95,62 +96,6 @@ button.bt{
     border: 2px solid #FD517C;
     border-radius: 50px;
 }
-  @media screen and (max-width: 600px) {
-    .header a:not(.logo) {
-      display: none;
-    }
-    body{
-        overflow-x: hidden;
-
-    }
-    .header-right {
-      float: none;
-    }
-    .header .icon {
-      display: block;
-    }
-    .header.responsive .header-right {
-      display: block;
-      width: 100%;
-      background-color: #f1f1f1;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      z-index: 1;
-    }
-    .header.responsive .header-right a {
-      display: block;
-      text-align: left;
-      float: none;
-    }
-    .text{
-      font-size: 40px;
-    }
-     .button {
-    position: absolute;
-    top: 50%; /* чуть ниже, чтобы текст и кнопки не наслаивались */
-    left: 50%;
-    transform: translateX(-50%); /* по центру */
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  button.bt {
-    width: 96%;
-    height: 45px;
-    font-size: 16px;
-    margin: 5px;
-  }
-
-  button.bt-two {
-    width: 96%;
-    height: 45px;
-    font-size: 16px;
-    margin: 5px;
-  }
-  }
-
-
     .header-s {
       display: flex;
       justify-content: space-between;
@@ -173,7 +118,7 @@ button.bt{
 
 .search-input {
   width: 100%;
-  padding: 12px 20px 12px 45px; /* padding-left увеличен под иконку */
+  padding: 12px 20px 12px 45px; 
   border-radius: 25px;
   border: 2px solid #FD517C;
   font-size: 16px;
@@ -185,52 +130,9 @@ button.bt{
     .container {
       display: flex;
       gap: 30px;
-    }
-
-    .filters {
-      width: 100px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-    }
-
-    .filter-group {
-      margin-bottom: 25px;
-    }
-
-    .filter-group h4 {
-      margin-bottom: 10px;
-      color: #FD517C;
-    }
-
-    .filter-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 6px 12px;
-    }
-
-    label {
-      font-size: 14px;
-    }
-
-    input[type="checkbox"] {
-      margin-right: 6px;
-        accent-color: #FD517C;
-      transform: scale(1.1);
-    }
-
-    .reset-btn {
-      background: #FD517C;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-weight: bold;
+      margin: 20px;
       cursor: pointer;
-      width: 100%;
     }
-
     .products {
       flex: 1;
       display: grid;
@@ -270,14 +172,6 @@ button.bt{
       font-weight: bold;
     }
 
-.contact{
-  margin-top: 30px;
-  padding-top: 20px;
-}
-.contact_page{
-  margin-top: 20px;
-  padding-top: 35px;
-}
 .bg2{
    position: relative;
 }
@@ -297,7 +191,7 @@ button.bt{
   position: absolute;
   top: 53%;
   left: 50%; 
-  transform: translate(-50%, -50%); /* чтобы реально выровнять по центру */
+  transform: translate(-50%, -50%); 
   text-align: center;
   color: white;
   background: white;
@@ -330,10 +224,11 @@ button.bt{
 .social{
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 14px;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 40px;
+  cursor: pointer;
 }
 .social-item{
   display: flex;
@@ -350,62 +245,207 @@ button.bt{
   cursor: pointer;
   font-family: "Noto Sans", sans-serif;
 }
-.mobile-header {
+.header .close-icon {
   display: none;
-  justify-content: center;
-  padding: 10px;
-}
-#filterToggle {
-  background: white;
-  border: 2px solid #FD517C;
+  font-size: 32px;
   color: #FD517C;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 2500;
+}
+.header.responsive .close-icon {
+  display: block;
+}
+.header.responsive #burgerIcon {
+  display: none;
+}
+@media (width: 414px) {
+  .bg .text {
+    transform: translateY(-100px);
+    margin-left: -103px;
+ }
+}
+@media (max-width: 390px) {
+   .bg .text {
+    transform: translateY(-75px);
+    margin-left: -103px;
+ }
+}
+@media (width: 430px) {
+   .bg .text {
+    transform: translateY(-100px);
+    margin-left: -103px;
+ }
+}
+@media (width: 412px) {
+   .bg .text {
+    transform: translateY(-100px);
+    margin-left: -103px;
+ }
+}
+@media (width: 768px) {
+   .bg .text {
+    transform: translateY(-130px);
+    margin-left: -110px;
+ }
+}
+@media (width: 820px) {
+   .bg .text {
+    transform: translateY(-240px);
+    margin-left: -170px;
+ }
+ .button{
+  top: 28%;
+  left: 22%;
+ }
+ .header .icon{
+    display: none;
+  }
+}
+@media (width: 1024px) {
+   .bg .text {
+    transform: translateY(-300px);
+    margin-left: -160px;
+ }
+  .button{
+  top: 26%;
+  left: 29%;
+ }
+}
+@media (width: 912px) {
+    .bg .text {
+    transform: translateY(-300px);
+    margin-left: -160px;
+ }
+    .button{
+  top: 26%;
+  left: 27%;
+ }
+}
+@media (width: 853px) {
+      .bg .text {
+    transform: translateY(-300px);
+    margin-left: -160px;
+ }
+    .button{
+  top: 25%;
+  left: 25%;
+ }
+  
 }
 @media (max-width: 768px) {
-
-  .mobile-header {
+  /* Шапка */
+  .header {
+    padding: 10px;
     display: flex;
-  }
-
-  .filters {
-    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    margin: 10px 0;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    z-index: 1000;
   }
-
-  .filters.active {
+  .header a.logo {
+    font-size: 20px;
+    text-align: center;
+    flex: 1;
+  }
+  .header .icon {
     display: block;
+    font-size: 28px;
+    color: #FD517C;
+  }
+  .header-right {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100%;
+    background: #fff;
+    padding-top: 70px;
+    transition: right 0.3s ease;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  }
+  .header.responsive .header-right {
+    right: 0;
+    align-items: baseline;
+  }
+  .header-right a {
+    font-size: 18px;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #FD517C;
+  }
+  .bg .text {
+    font-size: 26px;
+    top: 30%;
+  }
+  .bg{
+    height: 500px;
+  }
+  .button {
+  position: relative;
+    left: auto;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-530px);
+  }
+  button.bt,
+  .bt-two {
+    width: 170px;
+    font-size: 16px;
+  }
+  .header-s {
+    margin: 20px auto;
+    width: 90%;
+  }
+  .search-input {
+    width: 100%;
+    font-size: 16px;
   }
 
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    .products {
+    grid-template-columns: 1fr 1fr; /* 2 карточки в ряд */
+    gap: 10px;
   }
 
   .card img {
-    height: 180px;
+    height: 200px;
   }
 
-  .card-title {
-    font-size: 14px;
+  /* Контент */
+  .page {
+    width: 80%;
+    height: 64%;
+    padding: 20px;
   }
-
-  .card-price {
-    font-size: 14px;
+  .page h3 {
+    font-size: 28px;
   }
-
-  .search-input {
-    font-size: 14px;
-    padding: 10px 15px 10px 40px;
+  .page p {
+    font-size: 16px;
+  }
+  .icons{
+    align-items: center;
+  }
+  .social {
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    font-size: 12px;
+    margin-top: 30px;
+  }
+  .icon-item {
+    font-size: 12px;
+    flex-direction: column;
+    gap: 5px;
   }
 }
